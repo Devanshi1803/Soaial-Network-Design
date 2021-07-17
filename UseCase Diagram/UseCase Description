@@ -1,1 +1,191 @@
+#USE-CASE DESCRIPTION
+
+SignUp
+1.	Actor - User
+2.	PreCondition - User should have email id.
+3.	Description - User enters the email id, password, confirm password, username, birthday in the sign-up form.
+4.	Exception - invalid email error, password and confirm password doesn't match, username already taken error.
+5.	PostCondition - The user has an account on the network.
+
+
+Login
+1.	Actor - User
+2.	PreCondition - User must have an account and must know his/her login details. 
+3.	Description - User enters the email id/username and password.
+4.	Exception - invalid email id/username error, incorrect password error.	
+5.	PostCondition - User is logged in. 
+
+
+Forget Password
+1.	Actor-User
+2.	PreCondition-User must not be logged in.
+3.	Description-user clicks the forget password link 
+4.	Exception-server error
+5.	PostCondition-User gets the change password link via email
+
+
+Change Password
+1.	Actor-User
+2.	PreCondition-User must have an account
+3.	Description-user requests for change password option or get response link to forgotten password request. 
+4.	Exception-invalid password error, same as old password error 	 
+5.	PostCondition-Password has been changed.
+
+
+Logout
+1.	Actor-User
+2.	PreCondition-User must be logged in.
+3.	Description-User clicks the logout button.
+4.	Exception-server error
+5.	PostCondition-user has been logged out.
+
+
+Delete Account
+1.	Actor-User and Admin
+2.	PreCondition-User must be logged in.
+3.	Description-User selects the delete account option and fills a form for the reason of the deletion and then confirms the deletion. The another scenario in which the account can be deleted is by the admin due to violation code of conduct and community guideline by the account.
+4.	Exception-server error
+5.	PostCondition-the user will no longer have the access to his/her account and the account will be no longer visible to anyone.
+
+Manage Profile
+1.	Actor-User
+2.	PreCondition-user must be logged in.
+3.	Description-user Sets/changes/removes profile photo and cover photo.
+a.	    user edits his/her bio.
+4.	Exception-photo size error, string size error.
+5.	PostCondition-User's profile has been either created or updated.
+
+
+View Profile
+1.	Actor-User
+2.	PreCondition-requested user's account must be public or he/she must be in the friendlist.
+3.	Description-user search for the username then user gets the list of matched username and he/she can view profile by clicking on username in list
+4.	Exception-username not found error
+5.	PostCondition-user can view the requested profile
+
+
+Search People
+1.	Actor-User
+2.	PreCondition-user must be logged in
+3.	Description-user can search for people using username
+4.	Exception-username not found error
+5.	PostCondition-user gets the list of people
+
+View feed
+1.	Actor-User
+2.	PreCondition-user must be logged in
+3.	Description-user can view the feed visible to him/her; the feed will contain post from the accounts the user befriended and related to his/her preferences.
+4.	Exception-server error.
+5.	PostCondition-the posts will be available on the feed page of the user. 
+
+
+Send Friend Request
+1.	Actor-User
+2.	PreCondition-requested user must not be in the friend-list
+3.	Description-user send friend request using search-bar or he/she can send friend request from suggestion list
+4.	Exception-username not found error
+5.	PostCondition-friend request is sent
+
+
+Accept/Reject Friend Request
+1.	Actor-User
+2.	PreCondition-requestor should send the friend request
+3.	Description-the user receives the request and decides whether to ignore it,accept it or reject it
+4.	Exception-server error
+5.	PostCondition-if user accept the request then the requestor is sent a message stating that the request has been accepted. If the request is ignored or rejected then the requestor receives no response
+
+
+Unfriend
+1.	Actor-User
+2.	PreCondition-The user to be unfriended should be in the friendlist of the user who is unfriending.
+3.	Description-The user can unfriend any friends from the friend-list by selecting the unfriend option.
+4.	Exception- server error
+5.	PostCondition-The user who is unfriended will no longer appear in the friend-list of the the user who unfriended him/her.
+
+
+Share Post
+1.	Actor-User
+2.	PreCondition-The user should be logged in.
+3.	Description-The user can upload a photo or video on his/her profile with some caption.
+4.	Exception-size and format not compatible error, limited character length error.
+5.	PostCondition-The post will appear on the profile of the user and feed of the users who are his/her friends.
+
+Delete Post
+1.	Actor-User and Admin
+2.	PreCondition-The user should be logged in.
+3.	Description-The user can delete his/her post whenever he/she wants. The another scenario in which the post can be deleted is by the admin due to violation code of conduct and community guideline by the account or has been reported by multiple users.	
+4.	Exception-server error.
+5.	PostCondition- The post will no longer visible to anyone.
+
+
+Add comment
+1.	Actor-User
+2.	PreCondition-user should be logged and should be able to view a post.
+3.	Description-user can add comment on the visible post of any user.
+4.	Exception-limited character length error.
+5.	PostCondition-the posted comment will be visible under the post.
+
+Delete Comment
+1.	Actor-User and Admin
+2.	PreCondition-user should be logged in.
+3.	Description-user can delete comment on his/her post. The comment can be deleted by the user who added the comment also. The another scenario in which the post can be deleted is by the admin due to violation code of conduct and community guideline by the account or has been reported by multiple users.
+4.	Exception-limited character length error.
+5.	PostCondition-the posted comment will be visible under the post.
+
+
+Like
+1.	Actor-User
+2.	PreCondition-The user should be logged in and must be able to see the post.
+3.	Description-the user can like the post visible to him/her. The number of like increases by one when one user likes the post.
+4.	Exception-server error
+5.	PostCondition- The user will appear in the list of accounts liked the post.
+
+
+Manage tag
+1.	Actor-User
+2.	PreCondition-The user should be logged in. The tagged person should be having a valid account.
+3.	Description-a user can tag another user in a post.  A user can tag another user in a comment on a post as well using "@" prefix before username. The tagged user can either approve the tag or hide it.
+4.	Exception-not a valid username exception, server error.
+5.	PostCondition-the tag retains if the tagged user approves or it gets hidden in the post.
+
+
+Block account
+1.	Actor-User
+2.	PreCondition-The user should be logged and must be able to view the profile of the user to be blocked.
+3.	Description-a user can go to the profile of another user and select the block option.  
+4.	Exception-server error.
+5.	PostCondition-if the user is in the friend-list then will be removed from there. The blocked user won't we able to view the profile of the user who blocked him/her.
+
+
+Report complaint
+1.	Actor-User
+2.	PreCondition-the user should be logged in.
+3.	Description-a user can report complaint about a particular comment, post or account under the complaint policy.
+4.	Exception-server error.
+5.	PostCondition-the user will no longer able to see the content he/she reported. The admin will receive the complaint.
+
+
+Suspend account
+1.	Actor-Admin
+2.	PreCondition-admin should be logged in and would've gotten a minor complaint about a particular account.
+3.	Description-admin can suspend the account which is reported under minor complaint for a period of time.
+4.	Exception-server error.
+5.	PostCondition-the account which is suspended won’t be able to like, comment, and post for a while.
+
+
+Approve Complaint
+1.	Actor-User
+2.	PreCondition-some complaint should be registered from an authenticate user.
+3.	Description-the admin gets notified about the complaints and the according to the degree of complaint, the admin can delete or suspend such actions.
+4.	Exception-server error.
+5.	PostCondition-the necessary actions like delete or suspend will be undertaken.
+
+
+Change Password Response
+1.	Actor-User
+2.	PreCondition-some user requested to change the password due to forgotten password.
+3.	Description-admin receives notification for the same and can send a link to change the password to the user's email account.
+4.	Exception-unauthenticated request error, server error.
+5.	PostCondition-the link for resetting password will be sent to the user.
+
 
