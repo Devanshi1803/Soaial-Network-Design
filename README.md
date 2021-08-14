@@ -7,3 +7,4 @@ Following Diagrams are created to understand the object oriented software proble
 4) Activity Diagram
 5) Sequence Diagram 
 6) Component Diagram
+7) Deployment Diagram
